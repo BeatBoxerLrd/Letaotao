@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="letaotao-manager-web:war">
+    <output-path>$PROJECT_DIR$/../letaotao/letaotao-manager/letaotao-manager-web/target</output-path>
+    <root id="archive" name="letaotao-manager-web.war">
+      <element id="artifact" artifact-name="letaotao-manager-web:war exploded" />
+    </root>
+  </artifact>
+</component>

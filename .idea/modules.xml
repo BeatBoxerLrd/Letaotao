@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/common-parent/common-parent.iml" filepath="$PROJECT_DIR$/common-parent/common-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../letaotao/common-utils/common-utils.iml" filepath="$PROJECT_DIR$/../letaotao/common-utils/common-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../letaotao/letaotao-manager/letaotao-manager.iml" filepath="$PROJECT_DIR$/../letaotao/letaotao-manager/letaotao-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../letaotao/letaotao-manager/letaotao-manager-mapper/letaotao-manager-mapper.iml" filepath="$PROJECT_DIR$/../letaotao/letaotao-manager/letaotao-manager-mapper/letaotao-manager-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../letaotao/letaotao-manager/letaotao-manager-pojo/letaotao-manager-pojo.iml" filepath="$PROJECT_DIR$/../letaotao/letaotao-manager/letaotao-manager-pojo/letaotao-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../letaotao/letaotao-manager/letaotao-manager-service/letaotao-manager-service.iml" filepath="$PROJECT_DIR$/../letaotao/letaotao-manager/letaotao-manager-service/letaotao-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../letaotao/letaotao-manager/letaotao-manager-web/letaotao-manager-web.iml" filepath="$PROJECT_DIR$/../letaotao/letaotao-manager/letaotao-manager-web/letaotao-manager-web.iml" />
+    </modules>
+  </component>
+</project>

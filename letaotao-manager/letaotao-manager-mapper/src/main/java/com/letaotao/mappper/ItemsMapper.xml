@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.letaotao.mappper.ItemsMapper">
+    <resultMap id="BaseResultMap" type="com.letaotao.pojo.Items">
+        <id column="items_id" jdbcType="VARCHAR" property="itemsId" />
+        <result column="items_name" jdbcType="VARCHAR" property="itemsName" />
+        <result column="items_price" jdbcType="DECIMAL" property="itemsPrice" />
+        <result column="items_picture" jdbcType="VARCHAR" property="itemsPicture" />
+        <result column="items_handle" jdbcType="TINYINT" property="itemsHandle" />
+        <result column="items_type" jdbcType="TINYINT" property="itemsType" />
+        <result column="items_create_time" jdbcType="TIMESTAMP" property="itemsCreateTime" />
+        <result column="items_info" jdbcType="VARCHAR" property="itemsInfo" />
+        <result column="items_discount" jdbcType="DOUBLE" property="itemsDiscount" />
+        <result column="items_carousel" jdbcType="TINYINT" property="itemsCarousel" />
+        <result column="items_onthenew" jdbcType="TINYINT" property="itemsOnthenew" />
+    </resultMap>
+
+
+    <!--查询商品-->
+    <select id="loadById" parameterType="String" resultType="Items">
+        select * from items where items_id = #{itemsId} AND items_handle=0
+    </select>
+
+    <!--查询吃的商品-->
+    <select id="selectEat" resultType="Items">
+        select * from items where items_type=0 AND items_handle=0
+    </select>
+
+
+    <!--查询喝的商品-->
+    <select id="selectDrink" resultType="Items">
+        select * from items where items_type=1 AND items_handle=0
+    </select>
+
+    <!--查询DIY即所有商品-->
+    <select id="selectAll" resultType="Items">
+        select * from items WHERE items_handle=0
+    </select>
+
+    <!--查询上新商品，目的是给前台上新管理里边放，并且给后台的商品上新管理里边显示用-->
+    <select id="selectNewImage" resultType="Items">
+        select * from items WHERE items_onthenew=1 AND items_handle=0
+    </select>
+
+
+    <!--查询轮播商品，目的是给前台轮播图里面用，并且给后台的商品轮播图管理里边显示用-->
+    <select id="selectItemsCarousel" resultType="Items">
+        select * from items WHERE items_carousel=1 AND items_handle=0
+    </select>
+
+    <!--查询非新商品，供后台管理员选择设置上新商品时查看-->
+    <select id="selectNotNewImage" resultType="Items">
+        select * from items WHERE items_onthenew=0 AND items_handle=0
+    </select>
+
+    <!--查询非轮播商品，供后台管理员选择设置轮播商品时查看-->
+    <select id="selectNotCarousel" resultType="Items">
+        select * from items WHERE items_carousel=0 AND items_handle=0
+    </select>
+
+
+    <!--当管理员选择更换新品时，改变该商品在表中的上新状态，将其上新状态改为0-->
+    <update id="updateChooseNewItems" parameterType="String">
+        UPDATE items set items_onthenew = 0,update_time = DEFAULT where items_id=#{itemsId}
+    </update>
+
+    <!--当管理员选择更换轮播商品时，改变该商品在表中的轮播状态，将其轮播状态改为0-->
+    <update id="updateChooseCarouselItems" parameterType="String">
+        UPDATE items set items_carousel=0,update_time = DEFAULT where items_id=#{itemsId}
+    </update>
+    <!--当管理员确认更换新品时，改变该商品在表中的上新状态，将其上新状态改为1-->
+    <update id="updateConfirmNewItems" parameterType="String">
+        UPDATE items set items_onthenew = 1,update_time = DEFAULT where items_id=#{itemsId}
+    </update>
+
+    <!--当管理员确认更换轮播商品时，改变该商品在表中的轮播状态，将其轮播状态改为1-->
+
+    <update id="updateConfirmCarouselItems" parameterType="String">
+        UPDATE items set items_carousel=1,update_time = DEFAULT where items_id=#{itemsId}
+    </update>
+
+</mapper>
+
+
+

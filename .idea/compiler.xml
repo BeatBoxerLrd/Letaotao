@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="common-utils" />
+        <module name="letaotao-manager-mapper" />
+        <module name="letaotao-manager-pojo" />
+        <module name="letaotao-manager-service" />
+        <module name="letaotao-manager-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="common-parent" target="1.8" />
+      <module name="common-utils" target="1.8" />
+      <module name="letaotao-manager" target="1.8" />
+      <module name="letaotao-manager-mapper" target="1.8" />
+      <module name="letaotao-manager-pojo" target="1.8" />
+      <module name="letaotao-manager-service" target="1.8" />
+      <module name="letaotao-manager-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
